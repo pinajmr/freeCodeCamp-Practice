@@ -47,14 +47,15 @@ abi = json.loads(
     compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["metadata"]
 )["output"]["abi"]
 
-# w3 = Web3(Web3.HTTPProvider(os.getenv("RINKEBY_RPC_URL")))
-# chain_id = 4
-#
+w3 = Web3(Web3.HTTPProvider(os.getenv("RINKEBY_RPC_URL")))
+chain_id = 4
+my_address = "0x4317c44fD3143D8AC5723865CF046238A2cd8FD3"
+
 # For connecting to ganache
-w3 = Web3(Web3.HTTPProvider("http://0.0.0.0:8545"))
-chain_id = 1337
-my_address = "0xdbB4A708755dfD59f9c4b100B2BE23a6d2EB7D57"
-private_key = "ffdd7a010ab8c089d95a9c2ff24e75b21744b5db26c3cd66d14f8e91c46afcc4"
+# w3 = Web3(Web3.HTTPProvider("http://0.0.0.0:8545"))
+# chain_id = 1337
+# my_address = "0xdbB4A708755dfD59f9c4b100B2BE23a6d2EB7D57"
+# private_key = "ffdd7a010ab8c089d95a9c2ff24e75b21744b5db26c3cd66d14f8e91c46afcc4"
 
 # Create the contract in Python
 SimpleStorage = w3.eth.contract(abi=abi, bytecode=bytecode)
